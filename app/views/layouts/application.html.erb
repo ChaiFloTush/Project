@@ -23,6 +23,10 @@
         <a href= "<%= edit_user_registration_path %>"  class="w3-bar-item w3-button"> EDIT PROFILE </a>
         <p class="w3-bar-item w3-button"><%= link_to 'LOG OUT', destroy_user_session_path, data: { turbo_method: :delete}  %> </p>
         <% end %>
+        <% if current_user.present? && current_user.id = 4 %>
+        <a href= "<%= all_users_path %>"  class="w3-bar-item w3-button"> View users </a>
+        <p class="w3-bar-item w3-button"><%= link_to 'LOG OUT', destroy_user_session_path, data: { turbo_method: :delete}  %> </p>
+        <% end %>
         <% if !current_user.present? %>
         <a href="<%=new_user_session_path%>" class="w3-bar-item w3-button"><i class="fa fa-user"></i> SIGN IN </a>
         <% end %>

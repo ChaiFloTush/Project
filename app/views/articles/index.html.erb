@@ -57,6 +57,7 @@
               <%= article.category.humanize %> <br/>
               <p>Author: <%= User.find_by(id: article.user_id).name %> </p> 
           <% end %>
+          
         </div>
     </div>
 <% end %>
