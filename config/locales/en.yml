@@ -1,7 +1,7 @@
 en:
   home: 
     main: "Start creating with your soul"
-    smallmain: "Stop wasting valuable time with projects that just isn't you."
+    smallmain: "Spend valuable valuable time with projects that just isn't you."
     buttonmain: "Create your own article"
     aboutus: "About us"
     ourinfo: "We've created this small website to help everyone from beginners to expers to find inspiration for their craft and improve their skills"
@@ -15,3 +15,25 @@ en:
     advaninfo: "For those who are alredy pretty familiar with knitting and want something interesting to pass the time"
     pro: "Expert"
     proinfo: "For those who are confident in their skills and are not afraid to spend a desent amount of time and hard work on some challenge"
+    author: "Author: "
+  edit:
+    editim: "Edit"
+    editet: "Edit"
+  add:
+    addim: "Adding article" 
+  show:
+    categ: "For who: "
+    comm: "Comments: "
+    by: "by: "
+    submit: "Submit"
+  navbar:
+    title: "THE WORLD OF KNITTING"
+  devise:
+    leaveblank: "leave blank if you don't want to change it"
+    passwordminim: "character minimum: "
+    passwordenter: "enter your current password to confirm your changes"
+    cancel: "Cancel my account"
+    unhappy: "Unhappy?"
+    signup: "Sign up"
+    login: "Log in"
+  

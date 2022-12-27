@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-    enum category: [:Beginner, :Intermediate, :Advanced, :Expert]
+    enum category: [:Начинающий, :Осваивающийся, :Знающий, :Профи]
 
     has_one_attached :image
     has_rich_text :textbody

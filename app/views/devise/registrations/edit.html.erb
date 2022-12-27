@@ -1,5 +1,5 @@
 <body class="bgimg-2">
-  <div class="form_center" style="margin: 35px 0 0 0">
+  <div class="form_center" style="margin: 40px 0 0 0">
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
     <div class="form_main">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, data: { turbo: false } }) do |f| %>
@@ -20,12 +20,11 @@
         <% end %>
 
         <div class="field" id="txt_field">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
           <% if @minimum_password_length %>
-            <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
+            <em><i>(<%= t('devise.passwordminim') %><%= @minimum_password_length %><span>; </span><%=t('devise.leaveblank') %>)</i></em>
           <% end %>
+          <%= f.label :password %> <br/>
+          <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
 
         <div class="field" id="txt_field">
@@ -34,19 +33,19 @@
         </div>
 
         <div class="field" id="txt_field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.label :current_password %> <i>(<%=t('devise.passwordenter') %>)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Update" %>
+          <%= f.submit "Обновить" %>
         </div>
       <% end %>
     </div>
-    <h3>Cancel my account</h3>
+    <h3><%= t('devise.cancel') %></h3>
 
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></p>
+    <p><%= t('devise.unhappy') %> <%= link_to "Удалить свой аккаунт", registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></p>
 
-    <%= link_to "Back", :back %>
+    <%= link_to "Назад", :back %>
   </div>
 </body

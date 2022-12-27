@@ -6,8 +6,9 @@
         <p><%= user.email %></p>
         <%=form_with url: delete_path do |form|%>
             <%=form.hidden_field(:id, value: user.id)%>
-            <%=form.submit("Delete")%>
+            <%=form.submit("Удалить")%>
         <%end%>
+        <hr>
     </div>
     <%end%>
 <% end %>
