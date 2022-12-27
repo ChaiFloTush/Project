@@ -1,0 +1,9 @@
+<%= simple_form_for @article do |f| %>
+<%= f.input :title %>
+<%= f.select :category, options_for_select(Article.categories.map {|key, value| [key.humanize, key]}) %>
+<br/>
+<%= f.file_field :image %>
+<%= f.rich_text_area :textbody %>
+<br/>
+<%= f.button :submit %>
+<% end %>

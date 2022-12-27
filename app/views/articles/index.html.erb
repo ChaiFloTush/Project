@@ -1,0 +1,62 @@
+<header class="bgimg-1 w3-display-container w3-grayscale-min">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small" style="text-shadow: black 1px 0 10px;">Start something that matters</span><br>
+    <span class="w3-xlarge" style="text-shadow: black 1px 0 10px;">Stop wasting valuable time with projects that just isn't you.</span>
+    <p><a href="<%=new_article_path%>" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Create your own article</a></p>
+  </div> 
+</header>
+
+  <div class="w3-container w3-padding-32 w3-center">  
+    <h3 class="w3-xxlarge">About us</h3><br>
+    <div class="w3-padding-32 w3-xlarge">
+      <p>We're just a small website to help everyone from beginners to expers to find ideas for their crafts and improve their skills</p>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="w3-container" style="padding:90px 16px">
+  <h3 class="w3-center w3-xxlarge">Categorization</h3>
+  <p class="w3-center w3-xlarge">On this website tutorials can be 1 out of 4 difficulties</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa-solid fa-sun w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-xlarge">Beginner</p>
+      <p class="w3-large">For those who have never had any experience with knitting to learn their first designs and technics</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa-solid fa-cloud w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-xlarge">Intermediate</p>
+      <p class="w3-large">For those who have already had their first experience with knitting but don't feel very confortable yet</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa-solid fa-umbrella w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-xlarge">Advanced</p>
+      <p class="w3-large">For those who are alredy pretty familiar with knitting and want something interesting to pass the time</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa-solid fa-bolt w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-xlarge">Expert</p>
+      <p class="w3-large">For those who are confident in their skills and are not afraid to spend a desent amount of time and hard work on some challenge</p>
+    </div>
+  </div>
+</div>
+ <hr/>
+
+ <ul id="uls">
+    <% Article.categories.keys.each do |key| %>
+    <li class="w3-quarter" id="links"><%=link_to key.humanize, articles_path(:category=>key)%></li>
+    <% end %>
+ </ul>
+
+<% @articles.each do |article| %>
+    <div class="w3-row-padding w3-padding-16 w3-center w3-quarter">
+        <div class="artic">
+          <%= link_to article do %>
+              <%= image_tag article.image.variant(resize_to_limit: [260, 150]).processed if article.image.attached?%>
+              <h2> <%= article.title %> </h2>
+              <%= article.category.humanize %> <br/>
+              <p>Author: <%= User.find_by(id: article.user_id).name %> </p> 
+          <% end %>
+        </div>
+    </div>
+<% end %>

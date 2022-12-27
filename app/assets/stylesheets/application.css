@@ -1,0 +1,173 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .notice {
+    background-color: PaleGreen;
+    color: DarkGreen;
+    text-align: center;
+    opacity: 0.5;
+    position: relative;
+    top: 90px;
+}
+
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url('woman-knitting.jpg');
+    min-height: 100%;
+  }
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+  }
+
+  #uls {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  #uls {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  #links {
+    float: left;
+  }
+
+  #links2 {
+    float: left;
+    color: white;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #links3 {
+    float: left;
+    color: white;
+    width: 50%
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+    color: white;
+  }
+
+  .artic:hover {
+    background-color: lightgrey;
+    color: #111;
+  }
+
+  .bgimg-2 {
+    background-position: center;
+    background-size: cover;
+    background-image: url('bg2.jpg');
+    min-height: 100%;
+  }
+  .form_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+
+  .form_center h1{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+  }
+  .form_main{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  #txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  #txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  #txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .article_image {
+    margin-top: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 18%;
+  }
+
+  .article_title {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .article_text {
+    background-color: lightgrey;
+    width: 100%
+  }
+
+  .comments {
+    background-color: lightgrey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }

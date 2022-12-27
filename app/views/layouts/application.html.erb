@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Proj</title>
+    <link rel="stylesheet" href="http://e-learning.bmstu.ru/iu6/pluginfile.php/7546/mod_folder/content/0/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card">
+      <a href="<%= root_path %>" class="w3-bar-item w3-button w3-wide">THE WORLD OF KNITTING</a>
+      <div class="w3-right w3-hide-small">
+        <% if current_user.present? %>
+        <p class="w3-bar-item w3-button"><i class="fa fa-user"></i><%= current_user.name %></p>
+        <a href= "<%= edit_user_registration_path %>"  class="w3-bar-item w3-button"> EDIT PROFILE </a>
+        <p class="w3-bar-item w3-button"><%= link_to 'LOG OUT', destroy_user_session_path, data: { turbo_method: :delete}  %> </p>
+        <% end %>
+        <% if !current_user.present? %>
+        <a href="<%=new_user_session_path%>" class="w3-bar-item w3-button"><i class="fa fa-user"></i> SIGN IN </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+    <p class="notice"><%= flash[:notice] %></p>
+    <p class="alert"><%= flash[:alert] %></p>
+    <%= yield %>
+  </body>
+
+</html>
