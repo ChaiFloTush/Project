@@ -179,3 +179,8 @@ body, html {
     margin-right: auto;
     width: 18%;
   }
+
+  .for_forms {
+    margin-left: 100px;
+    margin-right: 100px;
+  }

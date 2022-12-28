@@ -1,7 +1,7 @@
 en:
   main: "Create with your soul"
   smallmain: "Spend valuable valuable time with projects that just isn't you."
-  buttonmain: "Create your own article"
+  buttonmain: "Create your own tutorial"
   aboutus: "About us"
   ourinfo: "We've created this small website to help everyone from beginners to expers to find inspiration for their craft and improve their skills"
   categs: "Categorization"
@@ -45,6 +45,9 @@ en:
   comsuccreate: "Comment was successfully created"
   rus: "Russian"
   eng: "English"
+  title2: "Title: "
+  category2: "For who: "
+  image2: "Image: "
   activerecord:
     models:
       article: "tutorial"

@@ -45,6 +45,9 @@ ru:
   comsuccreate: "Комментарий был успешно создан"
   rus: "Русский"
   eng: "Английский"
+  title2: "Заголовок: "
+  category2: "Для кого: "
+  image2: "Изображение: "
   activerecord:
     models:
       article: "туториал"
