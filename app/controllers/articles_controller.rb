@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:index, :search]
+    before_action :authenticate_user!, except: :index
     
     def index
         params[:category] ? @category = params[:category] : @category = 'Latest'
@@ -12,9 +12,6 @@ class ArticlesController < ApplicationController
     end
 
     def show
-    end
-
-    def search
     end
 
     def new
