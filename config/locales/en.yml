@@ -1,5 +1,5 @@
 en:
-  main: "Start creating with your soul"
+  main: "Create with your soul"
   smallmain: "Spend valuable valuable time with projects that just isn't you."
   buttonmain: "Create your own article"
   aboutus: "About us"
@@ -26,10 +26,10 @@ en:
   by: "by: "
   submit: "Submit"
   title: "THE WORLD OF KNITTING"
-  navsignup: "SIGN IN"
-  navedit: "EDIT PROFILE"
-  navprofiles: "LIST OF USERS"
-  navexit: "LOG OUT"
+  navsignup: "Sign in"
+  navedit: "Edit profile"
+  navprofiles: "List of users"
+  navexit: "Log out"
   leaveblank: "leave blank if you don't want to change it"
   passwordminim: "character minimum: "
   passwordenter: "enter your current password to confirm your changes"
@@ -43,4 +43,14 @@ en:
   succcupdate: "Article was successfully updated"
   succdelete: "Article was successfully deleted"
   comsuccreate: "Comment was successfully created"
-  
+  rus: "Russian"
+  eng: "English"
+  activerecord:
+    models:
+      article: "tutorial"
+      comment: "comment"
+    attributes:
+      article:
+        title: "title"
+      comment:
+        content: "content"

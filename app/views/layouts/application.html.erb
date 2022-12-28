@@ -16,7 +16,9 @@
   <body>
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card">
-      <a href="<%= root_path %>" class="w3-bar-item w3-button w3-wide"> <%=t(:title) %></a>
+      <p class="w3-bar-item w3-button"><%= link_to t(:title), root_path %> </p>
+      <p class="w3-bar-item w3-button"><%= link_to t(:rus), root_path(locale: :ru) %> </p>
+      <p class="w3-bar-item w3-button"><%= link_to t(:eng), root_path(locale: :en) %> </p>
       <div class="w3-right w3-hide-small">
         <% if current_user.present? %>
         <p class="w3-bar-item w3-button"><i class="fa fa-user"></i><%= current_user.name %></p>
