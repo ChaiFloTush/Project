@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Articles", type: :system do
-=begin
+
   describe 'root in russian' do
 
     it 'page has a button' do
@@ -18,18 +18,6 @@ RSpec.describe "Articles", type: :system do
     it 'redirects to authorization' do
       visit root_path(locale: :ru)
       click_on 'Создай свой персональный туториал'
-      expect(page).to have_current_path(new_user_session_path(locale: :ru))
-    end
-
-    it 'redirects to authorization' do
-      visit root_path(locale: :ru)
-      click_on 'Создай свой персональный туториал'
-      expect(page).to have_current_path(new_user_session_path(locale: :ru))
-    end
-
-    it 'redirects to authorization' do
-      visit root_path(locale: :ru)
-      click_on 'Вход'
       expect(page).to have_current_path(new_user_session_path(locale: :ru))
     end
 
@@ -59,14 +47,51 @@ RSpec.describe "Articles", type: :system do
       click_on 'Create your own tutorial'
       expect(page).to have_current_path(new_user_session_path(locale: :en))
     end
-
-  end
-=end
-  describe 'creating new article' do
-  #  visit new_article_path(locale: :ru)
-   # fill_in('title', :with => 'Rspec')
-  # click_button('submit')
-  #  expect(page).to have_current_path(root_path(locale: :ru))
   end
 
+  describe 'authentication' do
+
+    it 'sign in' do
+        visit root_path(locale: :ru)
+        click_on 'Войти'
+        click_on 'Зарегистрироваться'
+        fill_in('Имя', :with => 'Rspec')
+        fill_in('Имейл', :with => 'rspec@gmail.com')
+        fill_in('Пароль', :with => 'rspec@gmail.com')
+        fill_in('Подтверждение пароля', :with => 'rspec@gmail.com')
+        click_button('Зарегистрироваться')
+        page.should have_content('Rspec')
+    end
+
+    it 'creates new article' do
+      User.create(:name => "Rspec", :email => "rspec@gmail.com", :password => "rspec@gmail.com")
+      visit root_path(locale: :ru)
+      click_on 'Войти'
+      fill_in('Имейл', :with => 'rspec@gmail.com')
+      fill_in('Пароль', :with => 'rspec@gmail.com')
+      click_button('Войти')
+      click_on 'Создай свой персональный туториал'
+      fill_in('Заголовок', :with => 'Rspec')
+      click_button('Создать туториал')
+      page.should have_content('Туториал был успешно создан')
+      click_on 'Редактировать'
+      click_button('Сохранить туториал')
+      page.should have_content('Туториал был успешно обновлен')
+      fill_in('Заголовок', :with => 'Rspec')
+    end
+
+    it 'check admin' do
+      User.create(:name => "Rspec", :email => "rspec@gmail.com", :password => "rspec@gmail.com")
+      User.create(:name => "Admin", :email => "admin@gmail.com", :password => "admin@gmail.com")
+      visit root_path(locale: :ru)
+      click_on 'Войти'
+      fill_in('Имейл', :with => 'admin@gmail.com')
+      fill_in('Пароль', :with => 'admin@gmail.com')
+      click_button('Войти')
+      click_on 'Список пользователей'
+      expect(page).not_to have_current_path(all_users_path)
+    end
+
+  end
+  
 end

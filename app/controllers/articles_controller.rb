@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
 
     def update
         if @article.update(article_params)
-            redirect_to @article, notice: t(:succupdate)
+            redirect_to @article, notice: t(:succcupdate)
         else
             render 'edit'
         end

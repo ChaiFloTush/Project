@@ -48,6 +48,7 @@ en:
   title2: "Title: "
   category2: "For who: "
   image2: "Image: "
+  comment2: "Comment"
   activerecord:
     models:
       article: "tutorial"

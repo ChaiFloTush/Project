@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def all
+    redirect_to root_path if current_user.name != 'Admin'
     @users = User.all
   end
 

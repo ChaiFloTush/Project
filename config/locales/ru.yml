@@ -48,6 +48,7 @@ ru:
   title2: "Заголовок: "
   category2: "Для кого: "
   image2: "Изображение: "
+  comment2: "Комментарий"
   activerecord:
     models:
       article: "туториал"
