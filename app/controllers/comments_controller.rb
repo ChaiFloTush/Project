@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
         @comment = current_user.comments.new(comment_params)
 
         if @comment.save
-            redirect_to article_path(params[:article_id]), notice: "Comment was successfully created."
+            redirect_to article_path(params[:article_id]), notice: t(:comsuccreate)
         else
             render 'new'
         end

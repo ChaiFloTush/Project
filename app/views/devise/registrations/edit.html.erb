@@ -1,6 +1,6 @@
 <body class="bgimg-2">
   <div class="form_center" style="margin: 40px 0 0 0">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h2> <%=t(:editim)%> <%= resource_name.to_s.humanize %></h2>
     <div class="form_main">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, data: { turbo: false } }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -21,7 +21,7 @@
 
         <div class="field" id="txt_field">
           <% if @minimum_password_length %>
-            <em><i>(<%= t('devise.passwordminim') %><%= @minimum_password_length %><span>; </span><%=t('devise.leaveblank') %>)</i></em>
+            <em><i>(<%= t(:passwordminim) %><%= @minimum_password_length %><span>; </span><%=t(:leaveblank) %>)</i></em>
           <% end %>
           <%= f.label :password %> <br/>
           <%= f.password_field :password, autocomplete: "new-password" %>
@@ -33,19 +33,19 @@
         </div>
 
         <div class="field" id="txt_field">
-          <%= f.label :current_password %> <i>(<%=t('devise.passwordenter') %>)</i><br />
+          <%= f.label :current_password %> <i>(<%=t(:passwordenter) %>)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "Обновить" %>
+          <%= f.submit t(:update) %>
         </div>
       <% end %>
     </div>
-    <h3><%= t('devise.cancel') %></h3>
+    <h3><%= t(:cancel) %></h3>
 
-    <p><%= t('devise.unhappy') %> <%= link_to "Удалить свой аккаунт", registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></p>
+    <p><%= t(:unhappy) %> <%= link_to t(:cancel), registration_path(resource_name), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></p>
 
-    <%= link_to "Назад", :back %>
+    <%= link_to t(:back), :back %>
   </div>
 </body

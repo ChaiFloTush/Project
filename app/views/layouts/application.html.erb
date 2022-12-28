@@ -16,18 +16,18 @@
   <body>
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card">
-      <a href="<%= root_path %>" class="w3-bar-item w3-button w3-wide"><%= t('navbar.title') %></a>
+      <a href="<%= root_path %>" class="w3-bar-item w3-button w3-wide"> <%=t(:title) %></a>
       <div class="w3-right w3-hide-small">
         <% if current_user.present? %>
         <p class="w3-bar-item w3-button"><i class="fa fa-user"></i><%= current_user.name %></p>
-        <p class="w3-bar-item w3-button"><%= link_to 'РЕДАКТИРОВАТЬ ПРОФИЛЬ', edit_user_registration_path %> </p>
+        <p class="w3-bar-item w3-button"><%= link_to t(:navedit), edit_user_registration_path %> </p>
         <% if current_user.present? && current_user.id == 4 %>
-        <p class="w3-bar-item w3-button"><%= link_to 'ПРОСМОТРЕТЬ ПОЛЬЗОВАТЕЛЕЙ', all_users_path %> </p>
+        <p class="w3-bar-item w3-button"><%= link_to t(:navprofiles), all_users_path %> </p>
         <% end %>
-        <p class="w3-bar-item w3-button"><%= link_to 'ВЫЙТИ', destroy_user_session_path, data: { turbo_method: :delete}  %> </p>
+        <p class="w3-bar-item w3-button"><%= link_to t(:navexit), destroy_user_session_path, data: { turbo_method: :delete}  %> </p>
         <% end %>
         <% if !current_user.present? %>
-        <a href="<%=new_user_session_path%>" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ВОЙТИ </a>
+        <a href="<%=new_user_session_path%>" class="w3-bar-item w3-button"><i class="fa fa-user"></i> <%=t(:navsignup) %> </a>
         <% end %>
       </div>
     </div>

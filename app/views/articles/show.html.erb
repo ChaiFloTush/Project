@@ -2,20 +2,20 @@
 <h2 class="article_title"> <%= @article.title %> </h2>
 
 <ul id="uls">
-    <li id="links2"> <%= t('home.author') %> <%= @article.user.name  %></li>
-    <li id="links2"> <%= t('show.categ') %> <%= @article.category.humanize %></li>
+    <li id="links2"> <%= t(:author) %> <%= @article.user.name  %></li>
+    <li id="links2"> <%= t(:categ) %> <%= @article.category.humanize %></li>
 </ul>
 <br/>
 <ul id="uls">
     <% if current_user.id == @article.user.id %>
-        <li id="links3"> <%= link_to "Редактировать", edit_article_path%> </li>
-        <li id="links3"> <%= link_to "Удалить", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></li>
+        <li id="links3"> <%= link_to t(:editet), edit_article_path%> </li>
+        <li id="links3"> <%= link_to t(:deletet), article_path(@article), data: { turbo_method: :delete, turbo_confirm: t(:confirmation) } %></li>
     <% end %>
 </ul>
 
 <p class="article_text"><%= @article.textbody%></p>
 <hr/>
-<p class="comments"><%= t('show.comm') %></p><hr/>
+<p class="comments"><%= t(:comm) %></p><hr/>
 <%= render @article.comments.order(id: :desc)%> 
 <%= render partial: 'comments/form', locals: { article: @article } %> 
-<%= link_to "Назад", root_path%>
+<%= link_to t(:back), root_path%>

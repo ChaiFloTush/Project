@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
         @article = Article.new(article_params)
         @article.user_id = current_user.id
         if @article.save
-            redirect_to @article, notice: "Article was successfully created."
+            redirect_to @article, notice: t(:succcreate)
         else
             render 'new'
         end
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
 
     def update
         if @article.update(article_params)
-            redirect_to @article, notice: "Article was successfully updated."
+            redirect_to @article, notice: t(:succupdate)
         else
             render 'edit'
         end
@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
 
     def destroy
         @article.destroy
-        redirect_to root_path, notice: "Article was successfully destroyed."
+        redirect_to root_path, notice: t(:succdelete)
     end
 
     private
