@@ -7,11 +7,11 @@ class ArticlesController < ApplicationController
 
   def index
     params[:category] ? @category = params[:category] : @category = 'Latest'
-        if @category == 'Latest'
-            @articles = Article.all.order("created_at DESC")
-        else
-            @articles = Article.where(:category=>@category).order("created_at DESC")
-        end
+      if @category == 'Latest'
+        @articles = Article.all.order('created_at DESC')
+      else
+        @articles = Article.where(:category => @category).order('created_at DESC')
+      end
   end
 
   def show; end
